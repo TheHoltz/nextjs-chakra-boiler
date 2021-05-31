@@ -1,24 +1,32 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-echo '🏗️👷 Formatting code'
+echo '
+🏗️👷 Formatting code
+'
 
 
 yarn format
 
-echo '🏗️👷 Checking formats'
+echo '
+🏗️👷 Checking formats
+'
 
 # Check Prettier standards
 yarn check-format ||
 (
-    echo 'Prettier Check Failed. Run yarn format, add changes and try commit again.';
+    echo '
+    Prettier Check Failed. Run yarn format, add changes and try commit again.
+    ';
     false;
 )
 
 # Check ESLint Standards
 yarn check-lint ||
 (
-        echo 'ESLint Check Failed. Trying to fix it automagically.'
+        echo '
+        ESLint Check Failed. Trying to fix it automagically.
+        '
         eslint . --fix || echo 'Autofix failed' false;
          
 )
@@ -26,7 +34,9 @@ yarn check-lint ||
 # Check tsconfig standards
 yarn check-types ||
 (
-    echo 'Are you seriously trying to write that? Make the changes required above.'
+    echo '
+    Make the changes required above.
+    '
     false;
 )
 

@@ -1,8 +1,9 @@
 import { ChakraProvider } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
-import ProgressBar from '../modules/shared/progressBar/progressBar';
-import theme from '../constants/theme';
+
 import SeoTags from '../constants/seoTags';
+import theme from '../constants/theme';
+import ProgressBar from '../modules/shared/progressBar/progressBar';
 
 const Main = ({ Component, pageProps }) => {
 	const router = useRouter();
