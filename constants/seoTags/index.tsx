@@ -3,7 +3,7 @@ import React from 'react';
 
 function SeoTags() {
 	const siteName = 'New Project';
-	const title = 'New project 202X';
+	const title = 'This is the page title';
 	const description = 'This is my new awesome project!';
 
 	return (
