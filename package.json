@@ -5,7 +5,9 @@
 	"scripts": {
 		"dev": "next dev",
 		"build": "next build",
-		"start": "next start"
+		"start": "next start",
+		"lint": "eslint 'src/**/*.{ts,tsx}' --fix --max-warnings=0",
+		"prepare": "husky install"
 	},
 	"dependencies": {
 		"@chakra-ui/react": "^1.6.3",
@@ -36,7 +38,7 @@
 	},
 	"husky": {
 		"hooks": {
-			"pre-commit": "lint-staged"
+			"pre-commit": "lint"
 		}
 	},
 	"lint-staged": {
