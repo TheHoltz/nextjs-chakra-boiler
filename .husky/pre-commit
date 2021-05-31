@@ -22,13 +22,19 @@ yarn check-format ||
 )
 
 # Check ESLint Standards
-yarn check-lint ||
+yarn check-lint || (
+    
+    echo '
+        ESLint Check Failed. Trying to fix automagically.
+        '
+    yarn check-lint --fix && yarn check-lint
+
+) ||
 (
         echo '
-        ESLint Check Failed. Trying to fix it automagically.
+        ESLint Check Failed.
         '
-        eslint . --fix || echo 'Autofix failed' false;
-         
+        false
 )
 
 # Check tsconfig standards

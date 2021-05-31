@@ -1,5 +1,5 @@
-import React from 'react';
 import NextNprogress from 'nextjs-progressbar';
+import React from 'react';
 import { useColorModeValue } from '@chakra-ui/react';
 
 const ProgressBar = () => {
