@@ -1,7 +1,17 @@
-import '../styles/globals.css'
+import { ChakraProvider } from '@chakra-ui/react';
+import { useRouter } from 'next/router';
+import ProgressBar from '../modules/shared/progressBar/progressBar';
+import theme from '../constants/theme';
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
-}
+const Main = ({ Component, pageProps }) => {
+	const router = useRouter();
 
-export default MyApp
+	return (
+		<ChakraProvider theme={theme}>
+			<ProgressBar />
+			<Component {...pageProps} key={router.asPath} />
+		</ChakraProvider>
+	);
+};
+
+export default Main;
