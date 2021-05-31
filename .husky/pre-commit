@@ -9,7 +9,7 @@ echo '
 yarn format && yarn check-format ||
 (
     echo '
-    Prettier Check Failed. Run yarn format, add changes and try commit again.
+    ❌ Prettier Check Failed. Add changes and try commit again.
     ';
     false;
 )
@@ -33,7 +33,7 @@ yarn check-lint || (
 ) ||
 (
         echo '
-        👷🔨 ESLint Check Failed.
+        ❌ ESLint Check Failed.
         '
         false
 )
@@ -71,5 +71,5 @@ yarn build ||
 
 # If everything passes... Now we can commit
 echo '
-✅ Commit successful! Uhuuuul.
+✅ Code commited with success!
 '
