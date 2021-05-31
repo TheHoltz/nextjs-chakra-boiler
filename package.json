@@ -38,12 +38,12 @@
 	},
 	"husky": {
 		"hooks": {
-			"pre-commit": "prettier --write . && git add -A ."
+			"pre-commit": "lint-staged"
 		}
 	},
 	"lint-staged": {
-		"*.{js,jsx}": [
-			"eslint '*/**/*.{js,jsx}' --fix"
+		"*.{ts,tsx}": [
+			"eslint '*/**/*.{ts,tsx}' --fix"
 		]
 	}
 }
