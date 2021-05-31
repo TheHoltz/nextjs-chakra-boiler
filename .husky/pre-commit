@@ -2,7 +2,7 @@
 . "$(dirname "$0")/_/husky.sh"
 
 echo '
-🏗️👷 Formatting code and checking formats
+🏗️👷 Formatting code and checking formats.
 '
 
 # Check Prettier standards
@@ -19,7 +19,7 @@ echo '
 '
 
 echo '
-🏗️👷 Checking ESLint Standards
+🏗️👷 Checking ESLint Standards.
 '
 
 # Check ESLint Standards
@@ -43,7 +43,7 @@ echo '
 '
 
 echo '
-🏗️👷 Checking tsconfig standards
+🏗️👷 Checking tsconfig standards.
 '
 
 yarn check-types ||
