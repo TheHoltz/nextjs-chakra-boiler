@@ -2,18 +2,11 @@
 . "$(dirname "$0")/_/husky.sh"
 
 echo '
-🏗️👷 Formatting code
-'
-
-
-yarn format
-
-echo '
-🏗️👷 Checking formats
+🏗️👷 Formatting code and checking formats
 '
 
 # Check Prettier standards
-yarn check-format ||
+yarn format && yarn check-format ||
 (
     echo '
     Prettier Check Failed. Run yarn format, add changes and try commit again.
@@ -21,23 +14,38 @@ yarn check-format ||
     false;
 )
 
+echo '
+✅ Formatting pass.
+'
+
+echo '
+🏗️👷 Checking ESLint Standards
+'
+
 # Check ESLint Standards
 yarn check-lint || (
     
     echo '
-        ESLint Check Failed. Trying to fix automagically.
+        🏗️👷 ESLint Check Failed. Trying to fix automagically.
         '
     yarn check-lint --fix && yarn check-lint
 
 ) ||
 (
         echo '
-        ESLint Check Failed.
+        👷🔨 ESLint Check Failed.
         '
         false
 )
 
-# Check tsconfig standards
+echo '
+✅ ESlint pass.
+'
+
+echo '
+🏗️👷 Checking tsconfig standards
+'
+
 yarn check-types ||
 (
     echo '
@@ -46,16 +54,22 @@ yarn check-types ||
     false;
 )
 
+echo '
+✅ tsconfig standards check pass.
+'
+
 # If everything passes... Now we can commit
-echo '🤔🤔🤔🤔... Alright... Code looks good to me... Trying to build now. 🤔🤔🤔🤔'
+echo '🏗️👷 Generating build.'
 
 yarn build ||
 (
-    echo '❌👷🔨❌ Better call Bob... Because your build failed ❌👷🔨❌
-            Next build failed: View the errors above to see why. 
+    echo '
+    ❌ Next build failed: View the errors above to see why. 
     '
     false;
 )
 
 # If everything passes... Now we can commit
-echo '✅✅✅✅ You win this time... I am committing this now. ✅✅✅✅'
+echo '
+✅ Commit successful
+'
