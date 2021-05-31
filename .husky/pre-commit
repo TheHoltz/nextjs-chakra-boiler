@@ -71,5 +71,5 @@ yarn build ||
 
 # If everything passes... Now we can commit
 echo '
-✅ Commit successful
+✅ Commit successful! Uhuuuul.
 '
