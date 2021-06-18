@@ -6,7 +6,7 @@ echo '
 '
 
 # Check Prettier standards
-yarn format && yarn check-format ||
+yarn format ||
 (
     echo '
     ❌ Prettier Check Failed. Add changes and try commit again.
@@ -23,19 +23,13 @@ echo '
 '
 
 # Check ESLint Standards
-yarn check-lint || (
+ yarn check-lint --fix || (
     
     echo '
-        🏗️👷 ESLint Check Failed. Trying to fix automagically.
-        '
-    yarn check-lint --fix && yarn check-lint
-
-) ||
-(
-        echo '
         ❌ ESLint Check Failed.
         '
-        false
+    false
+
 )
 
 echo '
@@ -55,21 +49,12 @@ yarn check-types ||
 )
 
 echo '
-✅ tsconfig standards check pass.
+✅ Tsconfig standards check pass.
 '
 
 # If everything passes... Now we can commit
-echo '🏗️👷 Generating build.'
+git add .
 
-yarn build ||
-(
-    echo '
-    ❌ Next build failed: View the errors above to see why. 
-    '
-    false;
-)
-
-# If everything passes... Now we can commit
 echo '
 ✅ Code commited with success!
 '
