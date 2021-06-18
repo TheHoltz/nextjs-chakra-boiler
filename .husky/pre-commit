@@ -23,7 +23,7 @@ echo '
 '
 
 # Check ESLint Standards
- yarn check-lint --fix || (
+yarn check-lint --fix || (
     
     echo '
         ❌ ESLint Check Failed.
@@ -34,6 +34,24 @@ echo '
 
 echo '
 ✅ ESlint pass.
+'
+
+echo '
+🏗️👷 Checking NextJS ESLint Standards.
+'
+
+# Check ESLint Standards
+yarn check-next-lint || (
+    
+    echo '
+        ❌ NextJS ESLint Check Failed.
+        '
+    false
+
+)
+
+echo '
+✅ NextJS ESlint pass.
 '
 
 echo '
