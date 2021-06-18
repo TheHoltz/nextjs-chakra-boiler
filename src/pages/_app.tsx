@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 
 import SeoTags from '../constants/seoTags';
 import theme from '../constants/theme';
-import ProgressBar from '../modules/shared/progressBar/progressBar';
+import ProgressBar from '../modules/shared/progress-bar';
 
 const Main = ({ Component, pageProps }) => {
 	const router = useRouter();
